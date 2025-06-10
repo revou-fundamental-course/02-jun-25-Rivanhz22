@@ -29,12 +29,45 @@ section{
     height: 500px;
 }
 
-.banner-img{
-    height: 350px;
-    background-image: url(https://picsum.photos/200);
-    background-size: cover;
-    background-position: center;
+
+/* banner style  */
+
+  #banner-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  
 }
+
+.slider {
+ width: 80%;
+  max-width: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+.slides {
+  display: flex;
+  width: 100%;
+  animation: slide 9s infinite;
+    }
+
+.slides img {
+  width: 100%;
+  height: auto;
+  }
+ @keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
 /* Footer Component  */
 
 footer{
