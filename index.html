@@ -28,12 +28,13 @@
     <main>
         <!-- Home Section  -->
         <section id="home">
-            <h1>Hi there! Welcome to my portofolio website</h1>
-            <p>My Name Is Rivan, i'm a web Frontend developer</p>
+            <h1>Hi <span id="name">There</span> Welcome To My Website</h1>
+    
 
             <!-- banner section  -->
+        <div class="banner-container">
             <div class="slider">
-                <div class="slides">
+            <div class="slides">
       <img src="/img/image 1.jpeg" alt="Foto 1">
       <img src="/img/image 2.jpeg" alt="Foto 2">
       <img src="/img/image 3.jpeg" alt="Foto 3">
@@ -42,29 +43,71 @@
 
         </section>
 
-        <hr />
 
         <!-- Our Profile Section  -->
+         
         <section id="our-profile">
-            <h1>Our Profile</h1>
-            <p>We are a team of passionate developers.</p>
+            <h1 class="Title-profile"> Our Profile</h1>
+            <p class="Title-color"> We are a team of passionate developers.</p>
+            <p class="Introduction">Hello! My name is Rivan Hendiana ,i'm a front end developers.
+                im studying otodidak from youtube and other platform.my 
+                skill from it is HTML, CSS,bootstrap, and JavaScript.
+                I love to create beautiful and functional websites that provide a great user experience.and make sure for the front display.
+            </p>
+             <div class="skills-list">
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Java Script</Script></li>
+                <li>Tailwind</li>
+                <li>Bootstrap 5</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
         </section>
 
-        <hr />
+        
 
         <!-- Message Us Section  -->
-        <section id="message-us">
-            <h1>Message Us</h1>
-            <p>If you have any question, feel free to reach out!</p>
-            <form></form>
-        </section>
-    </main>
+        <div class="container">
+    <!-- Form Input -->
+    <form id="formInput" class="form">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required>
+
+      <label for="tgl">Tanggal Lahir:</label>
+      <input type="date" id="tgl" name="tgl" required>
+
+      <label for="gender">Jenis Kelamin:</label>
+      <select id="gender" name="gender" required>
+        <option value="">-- Pilih --</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
+
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="4" required></textarea>
+
+      <button type="submit">Kirim</button>
+    </form>
+
+    <!-- Output Hasil -->
+    <div class="output" id="output">
+      <h2>Hasil Input</h2>
+      <p><strong>Nama:</strong> <span id="outNama"></span></p>
+      <p><strong>Tanggal Lahir:</strong> <span id="outTgl"></span></p>
+      <p><strong>Jenis Kelamin:</strong> <span id="outGender"></span></p>
+      <p><strong>Pesan:</strong> <span id="outPesan"></span></p>
+    </div>
+  </div>
 
     <!-- Footer Content  -->
     <footer>
         <p>&copy; 2025 Rivan hendiana,All rights reserved.</p>
 
     </footer>
-    
+    <script src="/js/script.js"></script>
 </body>
 </html>
