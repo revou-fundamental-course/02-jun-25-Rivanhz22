@@ -15,6 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // banner auto slide 
+  const slides = document.querySelectorAll('.slider-js .slide');
+  let current = 0;
+
+  function showNextSlide() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  // Start auto-slide
+  setInterval(showNextSlide, 3000);
+});
+
+
   // Form handling
   const form = document.getElementById("formInput");
   if (form) {
@@ -26,4 +41,4 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("outPesan").textContent = document.getElementById("pesan").value;
     });
   }
-});
+
