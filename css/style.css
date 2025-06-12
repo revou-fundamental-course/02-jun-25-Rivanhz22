@@ -1,133 +1,169 @@
-/* Header Component  */
-.main-header{
-    display: flex;
-    justify-content: space-between;
+/* ========== RESET ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* ========== HEADER ========== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
 .main-logo {
-     height: 50px;
-    width: 50px;
-    background-image: url(https://picsum.photos/seed/picsum/200/300);
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
+  height: 50px;
+  width: 50px;
+  background-image: url(https://picsum.photos/seed/picsum/200/300);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
 }
-/* Header Component  */
 
-/* Navbar Component  */
+/* Toggle Menu (☰) */
+.menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+/* ========== NAVIGATION ========== */
 nav {
-    display: flex;
-    align-items: center;
-}
-nav > a{
-    border: 1px solid;
-    padding: 8px;
-    color: black;
-    text-decoration: none;
-    border-radius: 4px;
-}
-section{
-    padding: 60px 20px;
+  display: flex;
+  gap: 15px;
 }
 
+nav a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
 
-/* banner style  */
+nav a:hover {
+  background-color: #0008ff;
+  color: white;
+}
 
- .banner-container {
+/* ========== BANNER / SLIDER ========== */
+.banner-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px; 
-  margin-bottom: -20px;
- }
+  margin: 20px 0;
+}
 
 .slider {
- width: 80%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 900px;
+  height: 500px; /* Atur tinggi tetap */
+  aspect-ratio: 16/9; /* Atur rasio aspek */
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex;
-  justify-content: center;
   align-items: center;
- }
+  justify-content: center;
+  position: relative;
+}
 
 .slides {
   display: flex;
-  width: 100%;
-  animation: slide 9s infinite;
-    }
+  width: 600%; /* untuk 3 gambar */
+  animation: slide 18s infinite;
+  align-items: center;
+  justify-content: center;
+}
 
 .slides img {
-  width: 100%;
-  height: auto;
-  }
- @keyframes slide {
-  0% { transform: translateX(0); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
+ width: 100%;
+  height: 100%;
+  object-fit: contain; /* ✅ gambar tidak terpotong */
+  flex-shrink: 0;
+  display: block;
 }
 
-/* our profile  */
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-300%); } /* Hanya geser setengah dari total (6 gambar) */
+}
 
-.Title-profile{
- text-align: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
+
+/* ========== OUR PROFILE ========== */
+.Title-profile {
+  text-align: center;
+  margin-top: 40px;
   font-size: 35px;
 }
-.Title-color{
+
+.Title-color {
   text-align: center;
   color: blue;
   margin-bottom: 10px;
 }
 
-.Introduction{
- text-align: center;
-  color: #0e0e0e;
+.Introduction {
+  text-align: center;
   font-size: 1.1rem;
-  margin: 0 20px 10px 20px;
-  
+  margin: 0 20px 20px;
 }
-.skills-list{
- display: flex;
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  font-size: 1rem;
-  
+  list-style: none;
+  padding: 0;
 }
 
-.Message-us{
-  text-align: center;
-  color: #0e0e0e;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-size: 35px;
+.skills-list li {
+  /* background-color: #e3e3e3;  */
+  padding: 8px 14px;
+  border-radius: 5px;
 }
-.Message-colour{
-  text-align: center;
-  color: blue;
-  margin-bottom: 20px;
+
+/* ========== MESSAGE US SECTION ========== */
+section#message-us {
+  padding: 40px 20px;
 }
-/* Contact */
+
 .container {
   display: flex;
-  gap: 30px;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
   background-color: #fff;
   padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.form, .output {
+.form,
+.output {
   flex: 1;
   min-width: 300px;
   background: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 label {
@@ -136,7 +172,9 @@ label {
   font-weight: bold;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -162,12 +200,54 @@ button:hover {
   margin-top: 0;
 }
 
-  
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
 
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    margin-top: 10px;
+  }
 
+  nav.active {
+    display: flex;
+  }
 
-/* Footer Component  */
+  .menu-toggle {
+    display: block;
+  }
 
-footer{
-    text-align: center;
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form,
+  .output {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Responsive slider  */
+@media (max-width: 768px) {
+  .slider {
+    aspect-ratio: unset;
+    height: 300px;
+  }
 }
